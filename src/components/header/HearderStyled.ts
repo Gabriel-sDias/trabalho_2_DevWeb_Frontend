@@ -51,7 +51,14 @@ export const SearchButton = styled.button`
 export const UserProfilePictureDiv = styled.div`
   width: 8em;
   height: 100%;
-  background-color: aliceblue;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
-export const UserProfilePicture = styled.img``;
+export const UserProfilePicture = styled.img`
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+`;

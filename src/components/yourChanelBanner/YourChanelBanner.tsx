@@ -22,7 +22,7 @@ export function YourChanelBanner() {
       <UserInfoDiv>
         <UserName>Zezinho gameplays</UserName>
         <UserInfoText>@zezinhoGamplays ‧ 100 inscritos</UserInfoText>
-        <ManagerVideosButton>Gerenciar videos</ManagerVideosButton>
+        <ManagerVideosButton>Adicionar Video</ManagerVideosButton>
       </UserInfoDiv>
     </HeaderBody>
   );
