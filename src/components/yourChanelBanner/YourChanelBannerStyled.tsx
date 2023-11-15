@@ -16,7 +16,7 @@ export const LogoDiv = styled.div`
   height: 100%;
   background-color: black;
   display: flex;
-
+  margin-bottom: 10px;
   justify-content: center;
   margin-left: 3.5em;
 `;

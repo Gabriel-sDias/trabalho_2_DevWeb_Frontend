@@ -37,6 +37,7 @@ export const SearchInput = styled.input`
   height: 40px;
   border-radius: 20px 0px 0px 20px;
   border-width: 1px;
+  text-transform: lowercase;
 `;
 export const SearchButton = styled.button`
   width: 5em;

@@ -11,11 +11,15 @@ import {
 import MiniYoutube from "../../assets/images/MiniYoutube_cropped.png";
 import { MagnifyingGlass } from "@phosphor-icons/react";
 import { useNavigate } from "react-router-dom";
-
+import { useState } from "react";
 export function Header() {
+  const [search, setSearch] = useState("");
   const navigate = useNavigate();
   function handleYourChanel() {
     navigate("/yourchanel");
+  }
+  function handleSearch() {
+    navigate("/search", { state: { search: search } });
   }
   return (
     <HeaderBody>
@@ -23,8 +27,11 @@ export function Header() {
         <Logo src={MiniYoutube} />
       </LogoDiv>
       <InputDiv>
-        <SearchInput placeholder="Pesquisar" />
-        <SearchButton>
+        <SearchInput
+          placeholder="Pesquisar"
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <SearchButton onClick={handleSearch}>
           <MagnifyingGlass size={28} color="#fcfcfc" />
         </SearchButton>
       </InputDiv>

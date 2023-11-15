@@ -5,6 +5,7 @@ export const CardBody = styled.div`
   height: 400px;
   display: flex;
   flex-direction: column;
+  margin-inline: 60px;
 `;
 
 export const VideoDiv = styled.div`

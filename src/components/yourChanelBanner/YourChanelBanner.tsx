@@ -7,8 +7,13 @@ import {
   UserName,
   ManagerVideosButton,
 } from "./YourChanelBannerStyled";
+import { useNavigate } from "react-router-dom";
 
 export function YourChanelBanner() {
+  const navigation = useNavigate();
+  function handleAddVideo() {
+    navigation("/addvideo");
+  }
   return (
     <HeaderBody>
       <LogoDiv>
@@ -22,7 +27,9 @@ export function YourChanelBanner() {
       <UserInfoDiv>
         <UserName>Zezinho gameplays</UserName>
         <UserInfoText>@zezinhoGamplays ‧ 100 inscritos</UserInfoText>
-        <ManagerVideosButton>Adicionar Video</ManagerVideosButton>
+        <ManagerVideosButton onClick={handleAddVideo}>
+          Adicionar Video
+        </ManagerVideosButton>
       </UserInfoDiv>
     </HeaderBody>
   );

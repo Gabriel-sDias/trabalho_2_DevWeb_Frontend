@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const HomeBodyDiv = styled.div`
+export const MotivationBodyDiv = styled.div`
   padding: 0;
   min-height: 100vh;
   max-height: 100vh;
@@ -9,7 +9,13 @@ export const HomeBodyDiv = styled.div`
   background-color: black;
   flex-direction: column;
 `;
+
+export const TextTest = styled.h1`
+  size: 2em;
+  color: #fff;
+`;
 export const ViewDiv = styled.div`
+  width: 100vw;
   width: 100vw;
   height: 95vh;
   flex-direction: row;
@@ -19,12 +25,9 @@ export const ViewDiv = styled.div`
 export const ContentViewDiv = styled.div`
   height: 100%;
   display: flex;
+  flex-direction: column;
   width: 85vw;
   max-width: 85vw;
+  word-wrap: break-word;
   overflow: scroll;
-`;
-
-export const TextTest = styled.h1`
-  size: 2em;
-  color: #fff;
 `;

@@ -4,6 +4,7 @@ import { CardVideo } from "../cardVideo/CardVideo";
 import api from "../../service/api";
 import LoadingSpinner from "../loading/Loading";
 import { useNavigate } from "react-router-dom";
+
 export function VideoList() {
   const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +19,6 @@ export function VideoList() {
       .get("videos/getVideos")
       .then((response) => {
         setVideos(response.data);
-        console.log(response.data);
         setIsLoading(false);
       })
       .then(() => setIsLoading(false))
