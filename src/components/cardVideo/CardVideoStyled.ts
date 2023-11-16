@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+//arquivo de estilização, substitui o CSS
 export const CardBody = styled.div`
   width: 400px;
   height: 400px;

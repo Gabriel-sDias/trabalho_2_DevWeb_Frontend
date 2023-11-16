@@ -14,6 +14,7 @@ import { useState, useEffect } from "react";
 import api from "../../service/api";
 import LoadingSpinner from "../../components/loading/Loading";
 import { AxiosResponse } from "axios";
+//tela que exibe o resultado das pesquisa feita pelo usuario
 export function SearchResult() {
   const { state } = useLocation();
   const { search } = state;

@@ -1,9 +1,11 @@
 import { DashBoardBody, TextButton, TextButtonText } from "./DashBoardStyled";
 import { useNavigate } from "react-router-dom";
 import { House, UserCirclePlus, Books } from "@phosphor-icons/react";
-
+//Componente auxiliar de navegação
 export function DashBoard() {
   const navigate = useNavigate();
+
+  //funções de navegação
   function handleHome() {
     navigate("/");
   }
@@ -13,7 +15,7 @@ export function DashBoard() {
   function handleMotivation() {
     navigate("/motivation");
   }
-
+  //retornando componente que representa o DashBoard
   return (
     <DashBoardBody>
       <TextButton onClick={handleHome}>

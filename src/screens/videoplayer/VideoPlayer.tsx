@@ -15,6 +15,7 @@ import { YourChanelVideoList } from "../../components/yourChanelVideoList/YourCh
 import { useLocation } from "react-router-dom";
 import { Play } from "@phosphor-icons/react";
 
+//tela que exibe o video selecionado
 export function FullVideoPlayer() {
   const { state } = useLocation();
   const { video } = state;

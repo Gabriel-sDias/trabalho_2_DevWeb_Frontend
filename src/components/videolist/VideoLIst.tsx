@@ -5,19 +5,21 @@ import api from "../../service/api";
 import LoadingSpinner from "../loading/Loading";
 import { useNavigate } from "react-router-dom";
 
+//Componete que exibi todos os videos cadastrados dentro da aplicação
 export function VideoList() {
   const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const navigaiton = useNavigate();
-
+  //função de navegação
   function handleNavigate(id: string, videoUrl: string) {
     navigaiton("/player/" + id, { state: { video: videoUrl } });
   }
-
+  //requisição de dados para api
   const response = async () => {
     await api
       .get("videos/getVideos")
       .then((response) => {
+        //colocando os dados dentro de um state
         setVideos(response.data);
         setIsLoading(false);
       })
@@ -27,16 +29,18 @@ export function VideoList() {
         setIsLoading(false);
       });
   };
-
+  //função para atualizar a pagina apos a requisição dos dados
   useEffect(() => {
     if (isLoading) {
       response();
     }
   }, [videos]);
 
+  //retornando componente que lista todos os dados recebidos usando o card de video.
   return (
     <VideoListBody>
       {isLoading ? (
+        //componente que representa o carregamento da requisição
         <LoadingSpinner />
       ) : (
         videos.map((video) => {

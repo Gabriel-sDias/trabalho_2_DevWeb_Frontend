@@ -5,6 +5,9 @@ import api from "../../service/api";
 import LoadingSpinner from "../loading/Loading";
 import { useNavigate } from "react-router-dom";
 import { YourCardVideo } from "../yourCardVideo/YourCardVideo";
+
+//Componete que exibi todos os videos cadastrados pelo usuario dentro da aplicação.
+//praticamente a mesma logica do VideoList
 export function YourChanelVideoList() {
   const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);

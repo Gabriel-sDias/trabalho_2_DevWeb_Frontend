@@ -24,6 +24,8 @@ import thumbnailDefault from "../../assets/images/ThumnailDefault.png";
 import { useNavigate } from "react-router-dom";
 import { hasFormSubmit } from "@testing-library/user-event/dist/utils";
 import api from "../../service/api";
+
+//tela para adicionar um video feito pelo usuario.
 export function AddVideo() {
   const navigation = useNavigate();
   const videoPlayer = useRef<any>();

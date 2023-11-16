@@ -17,6 +17,7 @@ type props = {
   userProfilePicture: string;
   userName: string;
 };
+//Card generico para representar o video cadastrado
 export function CardVideo({
   handleNavigaiton,
   userName,
@@ -25,6 +26,7 @@ export function CardVideo({
   userProfilePicture,
   videoUrl,
 }: props) {
+  //retornando componente que representa o Card generico do video
   return (
     <CardBody onClick={handleNavigaiton}>
       <VideoDiv>

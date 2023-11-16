@@ -8,7 +8,7 @@ import {
   ManagerVideosButton,
 } from "./YourChanelBannerStyled";
 import { useNavigate } from "react-router-dom";
-
+//Componente que server como um Banner exibindo dados do perfil do usuairo.
 export function YourChanelBanner() {
   const navigation = useNavigate();
   function handleAddVideo() {

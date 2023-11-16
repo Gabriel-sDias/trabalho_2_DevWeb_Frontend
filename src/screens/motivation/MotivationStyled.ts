@@ -10,7 +10,7 @@ export const MotivationBodyDiv = styled.div`
   flex-direction: column;
 `;
 
-export const TextTest = styled.h1`
+export const TextTest = styled.h3`
   size: 2em;
   color: #fff;
 `;

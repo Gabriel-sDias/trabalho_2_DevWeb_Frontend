@@ -24,6 +24,8 @@ type props = {
   userProfilePicture: string;
   userName: string;
 };
+
+//Card muito similaar ao CardVideo porem com funcionalidades para o usuario principal, voltado para o perfil do usaurio.
 export function YourCardVideo({
   handleNavigaiton,
   userName,

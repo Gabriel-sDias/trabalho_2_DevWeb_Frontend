@@ -14,6 +14,8 @@ import { YourChanelVideoList } from "../../components/yourChanelVideoList/YourCh
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../service/api";
+
+//Tela para deleta um video do usuario.
 export function DeleteVideo() {
   const navigation = useNavigate();
   const { state } = useLocation();

@@ -4,6 +4,7 @@ import { DashBoard } from "../../components/dashBoard/DashBoard";
 import { YourChanelBanner } from "../../components/yourChanelBanner/YourChanelBanner";
 
 import { YourChanelVideoList } from "../../components/yourChanelVideoList/YourChanelVideoList";
+//tela principal do perfil do usuario.
 export function YourChanel() {
   return (
     <MotivationBodyDiv>

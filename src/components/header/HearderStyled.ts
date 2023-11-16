@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-
+//arquivo de estilização, substitui o CSS
 export const HeaderBody = styled.div`
   display: flex;
   flex-direction: row;

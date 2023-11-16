@@ -7,6 +7,7 @@ import { SearchResult } from "../screens/searchResult/SearchResult";
 import { EditVideo } from "../screens/editVideo/EditVideo";
 import { DeleteVideo } from "../screens/deleteVideo/DeleteVideo";
 import { FullVideoPlayer } from "../screens/videoplayer/VideoPlayer";
+//arquivo de configuração das rotas presentes dentro da aplicação
 export function AppRoutes() {
   return (
     <Router>

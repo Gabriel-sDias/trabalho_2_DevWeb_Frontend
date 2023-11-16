@@ -25,6 +25,8 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { hasFormSubmit } from "@testing-library/user-event/dist/utils";
 import api from "../../service/api";
+
+//Tela para editar um video do usuario.
 export function EditVideo() {
   const { state } = useLocation();
   const { videoId } = state;
