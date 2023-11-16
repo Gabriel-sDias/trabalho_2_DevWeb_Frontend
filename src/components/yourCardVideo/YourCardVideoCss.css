@@ -1,0 +1,77 @@
+.menu {
+    position: relative;
+    
+    > .menu-trigger {
+      display: inline-grid;
+      place-items: center;
+      padding: 0.5em;
+      
+      box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+    
+    > .menu-menu {
+      background: rgb(0, 0, 0);
+      border: 1px solid #CCC;
+      border-radius: 0.3em;
+      box-shadow: 3px 3px 8px rgba(0,0,0,0.2);
+      position: absolute;
+      width: 4.5em;
+  
+      margin-top: 0.5em;
+      transition: opacity 0.3s ease;
+      
+      > li {
+        padding: 0.2em 0.4em;
+      }
+    }
+    
+    &[data-aberto="true"] {
+      > .menu-trigger > .fa-plus {
+        display: none;
+ 
+      }
+      
+      > .menu-menu {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    
+    &[data-aberto="false"] {
+      > .menu-trigger > .fa-minus {
+        display: none;
+      }
+      
+      > .menu-menu {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s step-end;
+       
+      }
+    }
+  }
+
+/* CSS */
+.button-2 {
+  background-color: rgba(51, 51, 51, 0.05);
+  border-radius: 8px;
+  border-width: 0;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 10px 12px;
+  text-align: center;
+  transition: all 200ms;
+  vertical-align: baseline;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}

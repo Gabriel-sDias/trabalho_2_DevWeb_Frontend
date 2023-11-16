@@ -1,17 +1,17 @@
-import { VideoListBody } from "./VideoListStyled";
+import { VideoListBody } from "./YourChanelVideoListStyled";
 import { useState, useEffect } from "react";
 import { CardVideo } from "../cardVideo/CardVideo";
 import api from "../../service/api";
 import LoadingSpinner from "../loading/Loading";
 import { useNavigate } from "react-router-dom";
-
-export function VideoList() {
+import { YourCardVideo } from "../yourCardVideo/YourCardVideo";
+export function YourChanelVideoList() {
   const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const navigaiton = useNavigate();
 
-  function handleNavigate(id: string, videoUrl: string) {
-    navigaiton("/player/" + id, { state: { video: videoUrl } });
+  function handleNavigate() {
+    navigaiton("/");
   }
 
   const response = async () => {
@@ -41,15 +41,13 @@ export function VideoList() {
       ) : (
         videos.map((video) => {
           return (
-            <CardVideo
-              handleNavigaiton={() =>
-                handleNavigate((video as any).id, (video as any).data.videoUrl)
-              }
+            <YourCardVideo
+              handleNavigaiton={handleNavigate}
               userName={(video as any).data.user.name}
               userProfilePicture={(video as any).data.user.profilePicture}
               videoThumbnail={(video as any).data.thumbnailUrl}
               videoTitle={(video as any).data.title}
-              videoUrl={(video as any).data.videoUrl}
+              videoIdentifier={(video as any).id}
               key={(video as any).id}
             />
           );

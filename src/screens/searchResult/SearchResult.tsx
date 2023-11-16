@@ -42,7 +42,7 @@ export function SearchResult() {
 
   return (
     <MotivationBodyDiv>
-      <Header />
+      <Header onSearch={true} searchTitle={search} />
       <ViewDiv>
         <DashBoard />
         <ContentViewDiv>

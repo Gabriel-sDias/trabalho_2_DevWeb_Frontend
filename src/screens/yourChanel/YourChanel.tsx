@@ -1,23 +1,18 @@
-import {
-  MotivationBodyDiv,
-  TextTest,
-  ContentViewDiv,
-  ViewDiv,
-} from "./YourChanelStyled";
+import { MotivationBodyDiv, ContentViewDiv, ViewDiv } from "./YourChanelStyled";
 import { Header } from "../../components/header/Header";
 import { DashBoard } from "../../components/dashBoard/DashBoard";
 import { YourChanelBanner } from "../../components/yourChanelBanner/YourChanelBanner";
-import { CardVideo } from "../../components/cardVideo/CardVideo";
-import { VideoList } from "../../components/videolist/VideoLIst";
+
+import { YourChanelVideoList } from "../../components/yourChanelVideoList/YourChanelVideoList";
 export function YourChanel() {
   return (
     <MotivationBodyDiv>
-      <Header />
+      <Header onSearch={false} searchTitle="" />
       <ViewDiv>
         <DashBoard />
         <ContentViewDiv>
           <YourChanelBanner />
-          <VideoList />
+          <YourChanelVideoList />
         </ContentViewDiv>
       </ViewDiv>
     </MotivationBodyDiv>

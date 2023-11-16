@@ -149,7 +149,7 @@ export function AddVideo() {
 
   return (
     <AddVideoBodyDiv>
-      <Header />
+      <Header onSearch={false} searchTitle="" />
       <ViewDiv>
         <DashBoard />
         <ContentViewDiv>

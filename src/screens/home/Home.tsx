@@ -5,7 +5,7 @@ import { VideoList } from "../../components/videolist/VideoLIst";
 export function Home() {
   return (
     <HomeBodyDiv>
-      <Header />
+      <Header onSearch={false} searchTitle="" />
       <ViewDiv>
         <DashBoard />
         <ContentViewDiv>

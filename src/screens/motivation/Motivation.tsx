@@ -10,7 +10,7 @@ import { DashBoard } from "../../components/dashBoard/DashBoard";
 export function Motivation() {
   return (
     <MotivationBodyDiv>
-      <Header />
+      <Header onSearch={false} searchTitle="" />
       <ViewDiv>
         <DashBoard />
         <ContentViewDiv>

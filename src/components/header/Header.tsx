@@ -12,7 +12,12 @@ import MiniYoutube from "../../assets/images/MiniYoutube_cropped.png";
 import { MagnifyingGlass } from "@phosphor-icons/react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-export function Header() {
+
+type props = {
+  onSearch: boolean;
+  searchTitle: string;
+};
+export function Header({ onSearch, searchTitle }: props) {
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
   function handleYourChanel() {
@@ -29,6 +34,7 @@ export function Header() {
       <InputDiv>
         <SearchInput
           placeholder="Pesquisar"
+          value={onSearch ? searchTitle : undefined}
           onChange={(e) => setSearch(e.target.value)}
         />
         <SearchButton onClick={handleSearch}>
