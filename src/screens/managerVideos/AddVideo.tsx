@@ -24,6 +24,7 @@ import thumbnailDefault from "../../assets/images/ThumnailDefault.png";
 import { useNavigate } from "react-router-dom";
 import { hasFormSubmit } from "@testing-library/user-event/dist/utils";
 import api from "../../service/api";
+import { UserProfile } from "../../assets/images/UserProfile";
 
 //tela para adicionar um video feito pelo usuario.
 export function AddVideo() {
@@ -41,8 +42,7 @@ export function AddVideo() {
   let data = {
     user: {
       name: "Gabriel",
-      profilePicture:
-        "https://firebasestorage.googleapis.com/v0/b/projeto-barbearia-4cfe5.appspot.com/o/23c4617c-2817-4b5b-bb2d-db690d4a18f2.jpg?alt=media&token=aec5cea2-afc0-4a82-84ac-033beea4d179",
+      profilePicture: UserProfile,
       userId: "315151",
     },
     thumbnailUrl: thumbnailUrl,

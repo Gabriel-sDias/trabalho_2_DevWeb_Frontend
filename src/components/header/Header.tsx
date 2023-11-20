@@ -12,6 +12,7 @@ import MiniYoutube from "../../assets/images/MiniYoutube_cropped.png";
 import { MagnifyingGlass } from "@phosphor-icons/react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { UserProfile } from "../../assets/images/UserProfile";
 
 type props = {
   onSearch: boolean;
@@ -50,7 +51,7 @@ export function Header({ onSearch, searchTitle }: props) {
         </SearchButton>
       </InputDiv>
       <UserProfilePictureDiv onClick={handleYourChanel}>
-        <UserProfilePicture src="https://firebasestorage.googleapis.com/v0/b/projeto-barbearia-4cfe5.appspot.com/o/23c4617c-2817-4b5b-bb2d-db690d4a18f2.jpg?alt=media&token=aec5cea2-afc0-4a82-84ac-033beea4d179" />
+        <UserProfilePicture src={UserProfile} />
       </UserProfilePictureDiv>
     </HeaderBody>
   );
