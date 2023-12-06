@@ -13,9 +13,11 @@ import {
   MenuContent,
   MenuDiv,
 } from "./YourCardVideoStyled";
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import DefaultAvatar from "../../assets/images/User-avatar.svg.png";
 import "./YourCardVideoCss.css";
+import AuthContext from "../../context/Auth";
 type props = {
   handleNavigaiton: any;
   videoTitle: string;
@@ -36,6 +38,7 @@ export function YourCardVideo({
 }: props) {
   const menuRef = useRef<any>();
   const navigation = useNavigate();
+  const { user } = useContext(AuthContext);
   function openMenu() {
     const $menu = document.getElementById("menu");
 
@@ -60,7 +63,13 @@ export function YourCardVideo({
       </VideoDiv>
       <VideoInfoDiv>
         <ProfileImageDiv>
-          <UserProfilePicture src={userProfilePicture} />
+          <UserProfilePicture
+            src={
+              (user as any).result.getUser.data.profilePicture == "empty"
+                ? DefaultAvatar
+                : (user as any).result.getUser.data.profilePicture
+            }
+          />
         </ProfileImageDiv>
         <VideoTItleAndUserInfoDiv>
           <VideoTitle>{videoTitle}</VideoTitle>

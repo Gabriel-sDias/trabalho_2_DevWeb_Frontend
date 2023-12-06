@@ -1,16 +1,18 @@
 import { VideoListBody } from "./YourChanelVideoListStyled";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { CardVideo } from "../cardVideo/CardVideo";
 import api from "../../service/api";
 import LoadingSpinner from "../loading/Loading";
 import { useNavigate } from "react-router-dom";
 import { YourCardVideo } from "../yourCardVideo/YourCardVideo";
-
+import AuthContext from "../../context/Auth";
 //Componete que exibi todos os videos cadastrados pelo usuario dentro da aplicação.
 //praticamente a mesma logica do VideoList
 export function YourChanelVideoList() {
   const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { user } = useContext(AuthContext);
+  const id = (user as any).result.getUser.id;
   const navigaiton = useNavigate();
 
   function handleNavigate() {
@@ -19,7 +21,7 @@ export function YourChanelVideoList() {
 
   const response = async () => {
     await api
-      .get("videos/getVideos")
+      .get(`videos/getVideoById/${id}`)
       .then((response) => {
         setVideos(response.data);
         setIsLoading(false);

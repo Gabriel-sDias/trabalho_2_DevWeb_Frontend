@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import {
   AddVideoBodyDiv,
   ContentViewDiv,
@@ -24,6 +24,7 @@ import thumbnailDefault from "../../assets/images/ThumnailDefault.png";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { hasFormSubmit } from "@testing-library/user-event/dist/utils";
+import AuthContext from "../../context/Auth";
 import api from "../../service/api";
 
 //Tela para editar um video do usuario.
@@ -36,11 +37,12 @@ export function EditVideo() {
   const [thumbnailFile, setThumbnailFile] = useState("");
   const [thumbnailUrl, setThumbnailUrl] = useState("");
   const [title, setTitle] = useState("");
+  const { user } = useContext(AuthContext);
   let data = {
     thumbnailUrl: thumbnailUrl ? thumbnailUrl : undefined,
     videoId: videoId,
     title: title ? title : undefined,
-    userId: "315151",
+    userId: (user as any).result.getUser.id,
   };
   const response = async () => {
     api

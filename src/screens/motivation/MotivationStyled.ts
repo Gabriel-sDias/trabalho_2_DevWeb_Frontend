@@ -8,6 +8,7 @@ export const MotivationBodyDiv = styled.div`
   display: flex;
   background-color: black;
   flex-direction: column;
+  overflow: hidden;
 `;
 
 export const TextTest = styled.h3`

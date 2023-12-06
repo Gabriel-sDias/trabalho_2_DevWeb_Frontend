@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import {
   AddVideoBodyDiv,
   ContentViewDiv,
@@ -25,7 +25,7 @@ import { useNavigate } from "react-router-dom";
 import { hasFormSubmit } from "@testing-library/user-event/dist/utils";
 import api from "../../service/api";
 import { UserProfile } from "../../assets/images/UserProfile";
-
+import AuthContext from "../../context/Auth";
 //tela para adicionar um video feito pelo usuario.
 export function AddVideo() {
   const navigation = useNavigate();
@@ -39,11 +39,12 @@ export function AddVideo() {
   const [thumbnailFile, setThumbnailFile] = useState("");
   const [thumbnailUrl, setThumbnailUrl] = useState("");
   const [title, setTitle] = useState("");
+  const { user } = useContext(AuthContext);
   let data = {
     user: {
-      name: "Gabriel",
-      profilePicture: UserProfile,
-      userId: "315151",
+      name: (user as any).result.getUser.data.name,
+      profilePicture: (user as any).result.getUser.data.profilePicture,
+      userId: (user as any).result.getUser.id,
     },
     thumbnailUrl: thumbnailUrl,
     videoUrl: videoUrl,
@@ -188,10 +189,7 @@ export function AddVideo() {
           </NewVideoDiv>
           {video ? (
             <NewVideoDiv>
-              <NewVideo
-                ref={videoPlayer}
-                src="https://firebasestorage.googleapis.com/v0/b/devweb-80e3f.appspot.com/o/2023-07-03%2022-40-25.mp4?alt=media&token=63cb41c8-3988-4794-aac0-5e3684baf8a3"
-              />
+              <NewVideo ref={videoPlayer} src={video} />
               <TextButton onClick={() => setIsPlaying(!isPlaying)}>
                 <Play size={32} color="#fffafa" />
                 <TextButtonText>{isPlaying ? "Play" : "Pause"}</TextButtonText>
